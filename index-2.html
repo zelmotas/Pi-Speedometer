@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raspberry Pi Speedometer</title>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        #speed {
+            font-size: 3em;
+            color: #007BFF;
+        }
+    </style>
+    <script>
+        // JavaScript function to fetch the current speed from the server and update the webpage
+        function updateSpeed() {
+            fetch('/speed')
+                .then(response => response.json())  // Parse the JSON response
+                .then(data => {
+                    // Update the speed display with the latest speed value in km/h
+                    document.getElementById('speed').textContent = data.speed + " km/h";
+                });
+        }
+
+        // Continuously update the speed display every second (1000 milliseconds)
+        setInterval(updateSpeed, 1000);
+    </script>
+</head>
+<body>
+    <!-- Main content of the page -->
+    <h1>Raspberry Pi Speedometer</h1>
+    <!-- Placeholder for displaying the speed -->
+    <div id="speed">0.00 km/h</div>
+</body>
+</html>

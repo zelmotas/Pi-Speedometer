@@ -1,5 +1,7 @@
 # Raspberry Pi Speedometer using Flask and Sense HAT
 
+![Preview Image](./Preview_Image_Speedometer.png)
+
 ## Overview
 
 This project is a simple yet impressive speedometer built using a Raspberry Pi and a Sense HAT. It measures the speed using the accelerometer data from the Sense HAT and displays the speed in real-time on a web interface created with Flask. The speed is calculated in kilometers per hour (km/h) and can be accessed from any device on the same network as the Raspberry Pi.
